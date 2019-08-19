@@ -4,17 +4,24 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|
 
 ### Association
 - has_many :messages
+- has_many :groups
+
+## groupsテーブル
 
 Column|Type|Options|
 |------|----|-------|
-|groupname|text|
+|name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group_user
+- belongs_to :user
 
 ## messagesテーブル
 Column|Type|Options|
@@ -26,6 +33,7 @@ Column|Type|Options|
 
 ### Association
 - has_many :users
+- has_many :groups
 
 ## groups_usersテーブル
 
