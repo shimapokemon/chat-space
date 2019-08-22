@@ -16,7 +16,8 @@
             %p.side-header__box__user-name shimashima
             %ul.side-header__box__menu
               %li.side-header__box__menu__new-group
-                %a{:href => "/groups/new"}
+                = link_to new-groups_path(@groups) do
+                -# %a{:href => "/groups/new"} = 
                   %i.fa.fa-edit
               %li.side-header__box__menu__edit-user
                 %a{:href => "/users/1571/edit"}
