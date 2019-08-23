@@ -3,19 +3,24 @@
     .chat-side
       .side-header
         .side-header__box
-          %p.side-header__box__user-name shimashima
+          %p.side-header__box__user-name 
+            = current_user.name
           %ul.side-header__box__menu
             %li.side-header__box__menu__new-group
-              = link_to "#" do
+              = link_to new_group_path do
                 %i.fa.fa-edit
             %li.side-header__box__menu__edit-user
-              = link_to "#" do
-                %i.fa.fa-cog
+              = link_to edit_user_path(current_user) do
+                = fa_icon 'cog', class: 'icon'
       .groups
         = link_to "#" do
           .group
-            %p.group__group-name ご飯食べようの会
-            %p.group__latest-message お腹すいたっす先輩
+            - current_user.groups.each do |group|
+              = link_to '#' do
+                .group__name
+                  = group.name
+                .group__message
+                  メッセージはまだありません。
         = link_to "#" do
           .group
             %p.group__group-name ご飯食べようの会
