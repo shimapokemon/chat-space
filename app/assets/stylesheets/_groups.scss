@@ -1,0 +1,31 @@
+.groups{
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 20px 20px 0;
+  overflow: scroll;
+  
+  .group{
+    color:#ffffff;
+    margin-bottom: 40px;
+    &__- current_user.groups{
+      &__group-name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__group-message{
+        font-size: 11px;
+      }
+    }
+    &__group-name{
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__group-message{
+      font-size: 11px;
+    }
+    &__latest-message{
+      font-size: 11px;
+      margin-bottom: 40px;
+    }
+  }
+}

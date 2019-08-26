@@ -1,0 +1,34 @@
+.flash-box
+  .wrapper
+    = render 'devise/shared/chat-side' 
+    .chat-main
+      .main-header
+        .main-header__left-box
+          %h2.main-header__left-box__current-group{"data-group_id" => "3455"}
+            ご飯食べようの会
+          %ul.main-header__left-box__member-list
+            Member：
+            %li.main-header__left-box__member-list__member shimashima
+        = link_to "#" do
+          .main-header__edit-btn Edit
+      .messages
+        = render @messages
+        -# @messages
+        -# .message{"data-message_id" => "7"}
+        -#   .message__upper-info
+        -#     %p.message__upper-info__talker shimashima
+        -#     %p.message__upper-info__date 2019/08/21(Wed) 12:20:42
+        -#   %p.message__text とりあえず食うべく宇部
+        -# .message{"data-message_id" => "8"}
+        -#   .message__upper-info
+        -#     %p.message__upper-info__talker shimashima
+        -#     %p.message__upper-info__date 2019/08/21(Wed) 12:20:50
+        -#   %p.message__text お腹すいたっす先輩
+      .form
+        = form_for [@group, @message] do |f|
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'
