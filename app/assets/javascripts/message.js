@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message)
     var image = message.image ? `<img src=${message.image}>` : ""
     var html = `<div class="message" data-message-id=${message.id}>
         <div class="upper-message">
@@ -39,7 +38,6 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast'); 
       $('form')[0].reset();
-      console.log('Unko!');  
     })
     .fail(function(){
       alert('error');
