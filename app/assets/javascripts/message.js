@@ -20,7 +20,6 @@ $(function(){
     return html;
   };
 
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -34,6 +33,7 @@ $(function(){
       contentType: false
     })
     .done(function(message){
+
       var html = buildHTML(message);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast'); 
