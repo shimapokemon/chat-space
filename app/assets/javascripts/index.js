@@ -52,7 +52,6 @@ function appendProduct(user) {
     });
   });
   $(document).on("click", ".chat-group-user__btn--add", function () {
-    // $('#chat-group-users').val();
       var userId = $(this).data('user-id');
       var userName = $(this).data('user-name');
       $(this).parent().remove();
